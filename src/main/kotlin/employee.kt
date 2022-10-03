@@ -1,3 +1,5 @@
+import java.text.DecimalFormat
+
 class Employee constructor(var name: String,
                            var position: String,
                            var salary: Boolean,
@@ -6,6 +8,7 @@ class Employee constructor(var name: String,
                            ){
     fun calculate(hoursIn: Double){
         // CREATES VARIABLES TO BE USED LATER IN THE FUNCTION
+        val formatDec = DecimalFormat("#,###.00")
         var multiplier = 1.0
         var payIncrease = 1.0
         var hoursOfOT = 0.0
@@ -30,7 +33,7 @@ class Employee constructor(var name: String,
         val overtimePay = (payRate * multiplier) * hoursOfOT
         val regPay = regHours * payRate
         val weeklyPay = overtimePay + regPay
-        println("Rate of pay is $payRate\nAmount made this week: $$weeklyPay")
+        println("Rate of pay is ${formatDec.format(payRate)}\nAmount made this week: $${formatDec.format(weeklyPay)}")
 
     }
 
@@ -38,5 +41,4 @@ class Employee constructor(var name: String,
     fun display(){
         println("$name\n$position is salary: $salary\nShift: $shift")
     }
-
 }
