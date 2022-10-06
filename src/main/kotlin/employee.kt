@@ -1,5 +1,18 @@
 import java.text.DecimalFormat
 
+/**
+ * enum Class Employee
+ * @author
+ * Josiah Rivera
+ * DATE 10/6/2022
+ *
+ * @param name this is to get the employees name
+ * position this is needed to get the position, use from PostitionTitle
+ * salary is a boolean that checks to see if the employee is on salary
+ * payRate sets the pay rate of the employee
+ * shift checks which shift they are on
+ * this allows the user to put the titles in a lowercase(except first letter)
+ */
 class Employee constructor(var name: String,
                            var position: String,
                            var salary: Boolean,
